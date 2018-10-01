@@ -11,13 +11,14 @@
 
 Name:           python-%{srcname}
 Version:        2.1.4
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        PyCA's cryptography library
 
 Group:          Development/Libraries
 License:        ASL 2.0 or BSD
 URL:            https://cryptography.io/en/latest/
 Source0:        https://pypi.io/packages/source/c/%{srcname}/%{srcname}-%{version}.tar.gz
+Patch0:         0001-disallow-implicit-tag-truncation-with-finalize_with_.patch
 
 BuildRequires:  openssl-devel
 BuildRequires:  gcc
@@ -164,6 +165,9 @@ popd
 
 
 %changelog
+* Mon Oct 01 2018 Lon Hohberger <lhh@redhat.com> 2.1.4-3
+- Backport fix for CVE-2018-10903
+
 * Tue Apr 24 2018 Jon Schlueter <jschluet@redhat.com> 2.1.4-2
 - add Obsoletes for python-cryptography and versioned Provides (rhbz#1571358)
 
