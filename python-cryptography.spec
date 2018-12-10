@@ -11,7 +11,7 @@
 
 Name:           python-%{srcname}
 Version:        2.1.4
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        PyCA's cryptography library
 
 Group:          Development/Libraries
@@ -165,6 +165,9 @@ popd
 
 
 %changelog
+* Mon Dec 10 2018 Lon Hohberger <lon@redhat.com> 2.1.4-4
+- Rebuild (rhbz#1657935)
+
 * Mon Oct 01 2018 Lon Hohberger <lhh@redhat.com> 2.1.4-3
 - Backport fix for CVE-2018-10903
 
